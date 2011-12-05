@@ -1,0 +1,30 @@
+diff -rup system-config-language-1.3.4/src/language_gui.py system-config-language-1.3.4_mod/src/language_gui.py
+--- system-config-language-1.3.4/src/language_gui.py	2010-03-09 17:03:43.000000000 +0530
++++ system-config-language-1.3.4_mod/src/language_gui.py	2010-06-28 16:21:57.033675010 +0530
+@@ -20,6 +20,7 @@
+ 
+ import string
+ import gtk
++import gtk.gdk
+ import gobject
+ import sys, os
+ sys.path.append('/usr/share/system-config-language/')
+@@ -353,10 +354,17 @@ class childWindow:
+ 
+     def stand_alone(self):
+         self.mainWindow = gtk.Window()
++        self.screen=self.mainWindow.get_screen()
++        self.screenwidth= self.screen.get_width()
++        self.screenheight= self.screen.get_height()
+         self.mainWindow.connect("destroy", self.destroy)
+         self.mainWindow.set_title(_("Language Selection"))
+         self.mainWindow.set_icon(iconPixbuf)        
+-        self.mainWindow.set_size_request(-1, 600)
++        
++        if self.screenheight <= 600:
++            self.mainWindow.set_size_request(-1, int(self.screenheight*0.8))
++        else:
++            self.mainWindow.set_size_request(-1, 500)
+         self.mainWindow.set_border_width(12)        
+ 
+         self.bb = gtk.HButtonBox()

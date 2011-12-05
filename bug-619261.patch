@@ -1,0 +1,62 @@
+diff -rup system-config-language-1.3.4/src/gui_install.py system-config-language-1.3.4_mod/src/gui_install.py
+--- system-config-language-1.3.4/src/gui_install.py	2010-03-09 17:03:43.000000000 +0530
++++ system-config-language-1.3.4_mod/src/gui_install.py	2010-08-04 12:30:32.000000000 +0530
+@@ -15,6 +15,8 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ 
++import language_backend
++import lang_dict
+ import string
+ import os, sys
+ import gtk
+@@ -74,15 +76,46 @@ class guiInstall(yum.YumBase):
+         
+         while (gtk.events_pending ()):
+ 	        gtk.main_iteration ();
+-            
++        
++        groupexists = True    
+         if not self.comps.has_group(grpid):
+-            raise yum.Errors.GroupsError, "No Group named %s exists" % grpid
++            groupexists = False	
+ 
+         thisgroup = self.comps.return_group(grpid)
+         d.destroy()
+ 
+         if not thisgroup:
+-	        raise yum.Errors.GroupsError, "No Group named %s exists" % grpid	    
++            groupexists = False
++
++        if groupexists == False:
++            str = _("No Group named %s exists: Continue?" %grpid)
++            gd= gtk.MessageDialog(mainwin, gtk.DIALOG_MODAL,
++                                      gtk.MESSAGE_QUESTION,
++                                      message_format = str)
++            b = gd.add_button(_("No"), gtk.RESPONSE_CANCEL)
++            b = gd.add_button(_("Yes"), gtk.RESPONSE_OK)
++            d.set_default_response(gtk.RESPONSE_OK)
++            rc = gd.run()
++            gd.destroy()
++            if rc == gtk.RESPONSE_OK:
++                lb=language_backend.LanguageBackend()
++                ld=lang_dict.languages_Dict
++                for (key, val) in ld.iteritems():
++                    if ld[key]==grpid:
++                        lb.originalFile=None
++                        lb.writeI18N(key, "", "latarcyrheb-sun16", "utf8")
++                        # send message to login manager to re-read config / pick up lang change
++                        if os.access("/var/gdm/.gdmfifo", os.F_OK):
++                            try:
++                                fd = os.open("/tmp/.gdm_socket", os.O_WRONLY | os.O_APPEND | os.O_NONBLOCK)
++                                if fd >= 0:
++                                    os.write(fd, "\nUPDATE_CONFIG\n")
++                                    os.close(fd)
++                            except:
++                                pass
++                return True
++            else:
++                       raise yum.Errors.GroupsError, "No Group named %s exists" % grpid
+ 
+         if thisgroup.installed:
+             return True

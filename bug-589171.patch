@@ -1,0 +1,301 @@
+diff -rup system-config-language-1.3.4/po/ko.po system-config-language-1.3.4_mod/po/ko.po
+--- system-config-language-1.3.4/po/ko.po	2010-03-09 17:03:43.000000000 +0530
++++ system-config-language-1.3.4_mod/po/ko.po	2010-05-07 19:06:49.000000000 +0530
+@@ -1,17 +1,18 @@
+-# translation of system-config-language.trunk.po to Korean
++# translation of ko.po to Korean
+ # system-config-language.po Korean translation.
+ # Copyright (C) 2002 Red Hat, Inc
+ #
+ # Michelle Kim <mkim@redhat.com>, 2002.
+ # Michelle J Kim <mkim@redhat.com>, 2003.
+ # Eunju Kim <eukim@redhat.com>, 2006, 2009.
++# Hyunsok Oh <hoh@redhat.com>, 2010.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: system-config-language.trunk\n"
++"Project-Id-Version: ko\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2009-09-23 20:01+0530\n"
+-"PO-Revision-Date: 2009-12-08 13:33+1000\n"
+-"Last-Translator: Eunju Kim <eukim@redhat.com>\n"
++"POT-Creation-Date: 2010-03-29 14:58+0530\n"
++"PO-Revision-Date: 2010-04-06 12:14+1000\n"
++"Last-Translator: Hyunsok Oh <hoh@redhat.com>\n"
+ "Language-Team: Korean <ko@li.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+@@ -112,7 +113,7 @@ msgid ""
+ "The package %s is signed with a key %s (0x%s) from %s.  Would you like to "
+ "import this key?"
+ msgstr ""
+-"%s 패키지는 %s에서 키 %s (0x%s)로 서명되어 있습니다. 이 키를 가져오시겠습니"
++"%s 패키지는 키 %s (0x%s)로 %s에 서명되어 있습니다. 이 키를 가져오시겠습니"
+ "까?  "
+ 
+ #: ../src/gui_install.py:295
+@@ -189,7 +190,7 @@ msgstr "언어 선택"
+ 
+ #: ../src/language_gui.py:55
+ msgid "Change the default system language"
+-msgstr "기본 시스템 언어를 변경"
++msgstr "기본 시스템 언어 변경"
+ 
+ #: ../src/language_gui.py:71
+ msgid "Please select the default language for the system."
+@@ -201,11 +202,11 @@ msgid ""
+ "Nothing to do."
+ msgstr ""
+ "이미 기본 언어로 되어 있습니다,\n"
+-"아무것도 할 수 없습니다.  "
++"처리할 작업이 없습니다."
+ 
+ #: ../src/language_gui.py:196
+ msgid "Do you really want to change system language to default [en_US]?"
+-msgstr "정말로 시스템의 기본 언어를 [en_US]로 변경하시겠습니까?     "
++msgstr "정말로 시스템의 기본 언어를 [en_US]로 변경하시겠습니까?"
+ 
+ #: ../src/language_gui.py:201 ../src/language_gui.py:253
+ #: ../src/language_gui.py:274
+@@ -222,7 +223,7 @@ msgid ""
+ "system-config-language is a graphical user interface that allows the user to "
+ "change the default language of the system."
+ msgstr ""
+-"system-config-language는 사용자가 시스템의 기본 언어를 변경할 수있는 그래픽 "
++"system-config-language는 시스템의 기본 언어를 변경할 수있는 그래픽 "
+ "사용자 인터페이스입니다. "
+ 
+ #: ../src/language_gui.py:247 ../src/language_tui.py:69
+@@ -231,17 +232,17 @@ msgid ""
+ "'Yes' will change the language but not install it.\n"
+ "'No' will exit without changing the language."
+ msgstr ""
+-"네트워크 또는 Yum 저장소에 문제가 있습니다. 계속 진행하시겠습니까?\n"
+-"'Yes' 선택은 언어를 변경할 수 있지만 이를 설치하지 않습니다.\n"
++"네트워크 또는 Yum 저장소에 문제가 있습니다. 계속 진행하겠습니까?\n"
++"'Yes' 선택은 언어를 변경하지만 이를 설치하지 않습니다.\n"
+ "'No' 선택은 언어를 변경하지 않고 종료합니다. "
+ 
+ #: ../src/language_gui.py:266 ../src/language_tui.py:89
+ msgid " language support is not installed, do you want to install it?"
+-msgstr "언어 지원이 설치되어 있지 않습니다. 설치하시겠습니까?  "
++msgstr "언어 지원이 설치되어 있지 않습니다. 설치하겠습니까?  "
+ 
+ #: ../src/language_gui.py:300
+ msgid "The changes will take effect the next time you log in."
+-msgstr "다음에 로그인하시면 변경 사항이 나타날 것입니다."
++msgstr "다음에 로그인하면 변경 사항이 나타날 것입니다."
+ 
+ #: ../src/language_gui.py:366
+ msgid "System _Defaults"
+@@ -262,11 +263,11 @@ msgstr "사용법: system-config-languag
+ #. Gui can't be started for some reason, so use text mode
+ #: ../src/system-config-language.py:68
+ msgid "Starting graphical mode failed.  Starting text mode instead."
+-msgstr "그래픽 모드 시작을 실패했습니다.  대신 텍스트 모드로 시작합니다."
++msgstr "그래픽 모드를 시작하는 데 실패했습니다.  대신 텍스트 모드로 시작합니다."
+ 
+ #: ../src/tui_install.py:131
+ msgid "No header - huh?"
+-msgstr "헤더 없음 - ?  "
++msgstr "헤더 없음 - 어?"
+ 
+ #: ../src/tui_install.py:213
+ #, python-format
+diff -rup system-config-language-1.3.4/po/ml.po system-config-language-1.3.4_mod/po/ml.po
+--- system-config-language-1.3.4/po/ml.po	2010-03-09 17:03:43.000000000 +0530
++++ system-config-language-1.3.4_mod/po/ml.po	2010-05-07 19:06:49.000000000 +0530
+@@ -1,3 +1,4 @@
++# translation of ml.po to
+ # translation of system-config-language.trunk.ml.po to
+ # This file is distributed under the same license as the PACKAGE package.
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+@@ -5,10 +6,10 @@
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: system-config-language.trunk.ml\n"
++"Project-Id-Version: ml\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2009-09-23 20:01+0530\n"
+-"PO-Revision-Date: 2009-09-25 13:37+0530\n"
++"PO-Revision-Date: 2010-03-29 12:53+0530\n"
+ "Last-Translator: \n"
+ "Language-Team:  <en@li.org>\n"
+ "MIME-Version: 1.0\n"
+@@ -30,7 +31,7 @@ msgstr "കുറിപ്പു്:"
+ 
+ #: ../src/gui_install.py:72
+ msgid "Connecting Yum database, please wait for a bit ..."
+-msgstr "യം ഡേറ്റാബെയിസുമായി കണക്ട് ചെയ്യുന്നു, ദയവായി അല്‍പ നേരം കാത്തിരിക്കുക ..."
++msgstr "Yum ഡേറ്റാബെയിസുമായി കണക്ട് ചെയ്യുന്നു, ദയവായി അല്‍പ നേരം കാത്തിരിക്കുക ..."
+ 
+ #: ../src/gui_install.py:126
+ msgid "Resolving dependencies for updates"
+@@ -38,11 +39,11 @@ msgstr "പരിഷ്കരണങ്
+ 
+ #: ../src/gui_install.py:142
+ msgid "Error downloading headers"
+-msgstr "ഹെഡറുകള്‍ ഡൌണ്‍ലോട് ചെയ്യുന്നതില്‍ പിശക്"
++msgstr "ഹെഡറുകള്‍ ഡൌണ്‍ലോഡ് ചെയ്യുന്നതില്‍ പിശക്"
+ 
+ #: ../src/gui_install.py:143
+ msgid "Errors were encountered while downloading package headers."
+-msgstr "പാക്കേജ് ഹെഡറുകള്‍ ഡൌണ്‍ലോട് ചെയ്യുമ്പോള്‍ പിശകകുള്‍ നേരിട്ടിരിക്കുന്നു."
++msgstr "പാക്കേജ് ഹെഡറുകള്‍ ഡൌണ്‍ലോഡ് ചെയ്യുമ്പോള്‍ പിശകകുള്‍ നേരിട്ടിരിക്കുന്നു."
+ 
+ #: ../src/gui_install.py:156
+ msgid "Error resolving dependencies"
+@@ -85,15 +86,15 @@ msgstr "ഡിപന്‍ഡന്‍
+ #: ../src/gui_install.py:215
+ #, python-format
+ msgid "Downloading %s"
+-msgstr "%s ഡൌണ്‍ലോട് ചെയ്യുന്നു"
++msgstr "%s ഡൌണ്‍ലോഡ് ചെയ്യുന്നു"
+ 
+ #: ../src/gui_install.py:239
+ msgid "Error downloading packages"
+-msgstr "പാക്കേജുകള്‍ ഡൌണ്‍ലോട് ചെയ്യുന്നതില്‍ പിശക്"
++msgstr "പാക്കേജുകള്‍ ഡൌണ്‍ലോഡ് ചെയ്യുന്നതില്‍ പിശക്"
+ 
+ #: ../src/gui_install.py:252
+ msgid "Downloading packages"
+-msgstr "പാക്കേജുകള്‍ ഡൌണ്‍ലോട് ചെയ്യുന്നു"
++msgstr "പാക്കേജുകള്‍ ഡൌണ്‍ലോഡ് ചെയ്യുന്നു"
+ 
+ #: ../src/gui_install.py:262
+ msgid "Unable to find a suitable mirror."
+@@ -101,7 +102,7 @@ msgstr "അനുയോജ്യമാ
+ 
+ #: ../src/gui_install.py:274
+ msgid "Errors were encountered while downloading packages."
+-msgstr "പാക്കേജുകള്‍ ഡൌണ്‍ലോട് ചെയ്യുമ്പോള്‍ പിശകുകള്‍ നേരിട്ടിരിക്കുന്നു."
++msgstr "പാക്കേജുകള്‍ ഡൌണ്‍ലോഡ് ചെയ്യുമ്പോള്‍ പിശകുകള്‍ നേരിട്ടിരിക്കുന്നു."
+ 
+ #: ../src/gui_install.py:289
+ msgid "Import key?"
+@@ -138,7 +139,7 @@ msgid ""
+ "Malicious software can damage your computer or cause other harm.  Are you "
+ "sure you wish to install this package?"
+ msgstr ""
+-"തകരാറുള്ള സോഫ്റ്റ്‌വെയര്‍ നിങ്ങളുടെ കംപ്യൂട്ടറിനു് തകരാറുണ്ടാക്കുന്നു. നിങ്ങള്‍ക്കീ പാക്കേജ് ഇന്‍സ്റ്റോള്‍ "
++"തകരാറുള്ള സോഫ്റ്റ്‌വെയര്‍ നിങ്ങളുടെ കമ്പ്യൂട്ടറിനു് തകരാറുണ്ടാക്കുന്നു. നിങ്ങള്‍ക്ക് ഈ പാക്കേജ് ഇന്‍സ്റ്റോള്‍ "
+ "ചെയ്യണമെന്നുറപ്പാണോ?"
+ 
+ #: ../src/gui_install.py:337
+@@ -155,7 +156,7 @@ msgstr "സോഫ്റ്റ്‌വ
+ 
+ #: ../src/gui_install.py:354
+ msgid "There were errors encountered in trying to update the software you selected"
+-msgstr "നിങ്ങള്‍ തെരഞ്ഞെടുത്ത സോഫ്റ്റ്‌വെയര്‍ പരിഷ്കരിക്കുവാന്‍ ശ്രമിക്കുന്നതില്‍ പിശകുകള്‍ നേരിട്ടിരിക്കുന്നു"
++msgstr "നിങ്ങള്‍ തെരഞ്ഞെടുത്ത സോഫ്റ്റ്‌വെയര്‍ പരിഷ്കരിക്കുവാന്‍ ശ്രമിക്കുമ്പോള്‍ പിശകുകള്‍ നേരിട്ടിരിക്കുന്നു"
+ 
+ #: ../src/gui_install.py:361
+ msgid "Updating software"
+@@ -186,27 +187,27 @@ msgstr "ഭാഷ"
+ #: ../src/language_gui.py:54 ../src/language_gui.py:68
+ #: ../src/language_gui.py:357 ../src/language_tui.py:47
+ msgid "Language Selection"
+-msgstr "ഭാഷ തെരഞ്ഞെടുപ്പ്"
++msgstr "ഭാഷ തെരഞ്ഞെടുക്കുക"
+ 
+ #: ../src/language_gui.py:55
+ msgid "Change the default system language"
+-msgstr "കംപ്യൂട്ടര്‍ നിശ്ചയിച്ചിട്ടുളള ഭാഷ മാറ്റുക"
++msgstr "കമ്പ്യൂട്ടറിനു് സ്വതവേയുള്ള ഭാഷ മാറ്റുക"
+ 
+ #: ../src/language_gui.py:71
+ msgid "Please select the default language for the system."
+-msgstr "കംപ്യൂട്ടര്‍ നിശ്ചയിച്ചിട്ടുളള ഭാഷ തെര‍ഞ്ഞെടുക്കുക."
++msgstr "ദയവായി കമ്പ്യൂട്ടറിനുള്ള ഭാഷ തെരഞ്ഞെടുക്കുക."
+ 
+ #: ../src/language_gui.py:190
+ msgid ""
+ "Already system in default language,\n"
+ "Nothing to do."
+ msgstr ""
+-"നിലവില്‍ കംപ്യൂട്ടര്‍ നിശ്ചയിച്ചിട്ടുളള ഭാഷയിലാണു്,\n"
++"നിലവില്‍ കമ്പ്യൂട്ടറിനു് സ്വതവേയുള്ള ഭാഷയിലാണു്,\n"
+ "ഇനി ഒന്നും ചെയ്യുവാനില്ല."
+ 
+ #: ../src/language_gui.py:196
+ msgid "Do you really want to change system language to default [en_US]?"
+-msgstr "നിങ്ങള്‍ക്കു് സിസ്റ്റം നിശ്ചയിച്ചിട്ടുള്ള ഭാഷ മാറ്റി സ്വതവേയുള്ള [en_US] ആക്കണമോ?"
++msgstr "നിങ്ങള്‍ക്കു് സിസ്റ്റത്തിന്റെ ഭാഷ സ്വതവേയുള്ള [en_US] ആയി മാറ്റണമോ?"
+ 
+ #: ../src/language_gui.py:201 ../src/language_gui.py:253
+ #: ../src/language_gui.py:274
+@@ -246,11 +247,11 @@ msgstr "വരുത്തിയ മാ
+ 
+ #: ../src/language_gui.py:366
+ msgid "System _Defaults"
+-msgstr "സിസ്റ്റത്തില്‍ _സഹജമായവ"
++msgstr "സ_ഹജമായ"
+ 
+ #: ../src/language_tui.py:44
+ msgid "Select the language for the system."
+-msgstr "കംപ്യൂട്ടറിന് വേണ്ടി ഭാഷ തെരഞ്ഞെടുക്കുക."
++msgstr "കമ്പ്യൂട്ടറിനു് വേണ്ടി ഭാഷ തെരഞ്ഞെടുക്കുക."
+ 
+ #: ../src/language_tui.py:74 ../src/language_tui.py:95
+ msgid "Installing Confirm"
+@@ -258,7 +259,7 @@ msgstr "ഇന്‍സ്റ്റോ
+ 
+ #: ../src/system-config-language.py:45
+ msgid "Usage: system-config-language [--text]\n"
+-msgstr "ഉപയോഗിക്കേണ്ട വിധം: system-config-language [--text]\n"
++msgstr "Usage: system-config-language [--text]\n"
+ 
+ #. Gui can't be started for some reason, so use text mode
+ #: ../src/system-config-language.py:68
+diff -rup system-config-language-1.3.4/po/ta.po system-config-language-1.3.4_mod/po/ta.po
+--- system-config-language-1.3.4/po/ta.po	2010-03-09 17:03:43.000000000 +0530
++++ system-config-language-1.3.4_mod/po/ta.po	2010-05-07 19:06:49.000000000 +0530
+@@ -4,20 +4,21 @@
+ #
+ # Jayaradha N <njaya@redhat.com>, 2004.
+ # Felix <ifelix@redhat.com>, 2006.
+-# I. Felix <ifelix@redhat.com>, 2009.
++# I. Felix <ifelix@redhat.com>, 2009, 2010.
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: system-config-language.trunk.ta\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2009-09-23 20:01+0530\n"
+-"PO-Revision-Date: 2009-09-23 22:39+0530\n"
+-"Last-Translator: I. Felix <ifelix@redhat.com>\n"
+-"Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
++"POT-Creation-Date: 2010-03-29 14:58+0530\n"
++"PO-Revision-Date: 2010-04-15 17:05+0530\n"
++"Last-Translator: \n"
++"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+-"X-Generator: KBabel 1.11.4\n"
+-"Plural-Forms: nplurals=2; plural=(n!=1);\\n\n"
++"X-Generator: Lokalize 1.0\n"
++"Plural-Forms: nplurals=2; plural=(n!=1);\\n"
++"\n"
+ "\n"
+ "\n"
+ "\n"
+@@ -75,7 +76,7 @@ msgstr ""
+ 
+ #: ../src/gui_install.py:182
+ msgid "Adding for dependencies:\n"
+-msgstr "சார்புகள்க்கு சேர்க்கிறது:\n"
++msgstr "சார்புகளுக்கு சேர்க்கிறது:\n"
+ 
+ #: ../src/gui_install.py:183
+ msgid "Removing for dependencies:\n"
+@@ -140,7 +141,8 @@ msgstr "மூடு (_C)"
+ msgid ""
+ "Malicious software can damage your computer or cause other harm.  Are you "
+ "sure you wish to install this package?"
+-msgstr "முறையற்ற மென்பொருள் உங்கள் கணினிக்கு சேதம் விளைவிக்கும். இந்த தொகுப்பை நிறுவ வேண்டுமா?"
++msgstr ""
++"முறையற்ற மென்பொருள் உங்கள் கணினிக்கு சேதம் விளைவிக்கும். இந்த தொகுப்பை நிறுவ வேண்டுமா?"
+ 
+ #: ../src/gui_install.py:337
+ msgid "_Cancel"
